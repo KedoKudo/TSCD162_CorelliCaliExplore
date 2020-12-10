@@ -1,5 +1,6 @@
-# MantidWorkbench_dev_template
-This is a template for setting up a development repo for MantidWorkbench related tasks.
+# TSCD162_CorelliCaliExplore
+This repo is for tracking the development work of task https://code.ornl.gov/sns-hfir-scse/diffraction/single-crystal/single-crystal-diffraction/-/issues/162
+
 
 # Folder renaming convention
 
