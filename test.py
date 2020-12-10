@@ -17,3 +17,7 @@ SCDCalibratePanels(
     alpha=90, beta=90, gamma=90,
     )
 
+# load empty instrument
+LoadEmptyInstrument(Filename="CORELLI_Definition.xml", OutputWorkspace="cws")
+LoadParameterFile(Workspace="cws", Filename='corelli_natrolite.xml')
+
