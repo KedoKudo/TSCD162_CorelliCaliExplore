@@ -91,6 +91,9 @@ clean:
 	rm  -fvr   tmp_*
 	rm  -fvr   build
 	rm  -fvr   opt
+	rm  -fvr   *.DetCal
+	rm  -fvr   *.xml
+	rm  -fvr   *.nxs
 
 
 # clean everything and archive the project
