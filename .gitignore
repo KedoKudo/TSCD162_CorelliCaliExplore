@@ -7,6 +7,9 @@ mantid/*
 build/*
 opt/*
 data/*
+*.nxs
+*.DetCal
+*.xml
 
 ### C++ ###
 # Prerequisites
