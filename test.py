@@ -4,10 +4,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # lattice constant for natrolite
-# https://aip.scitation.org/doi/10.1063/1.2014932
-a = 18.350_8  # A
-b = 18.622_7  # A
-c = 6.600_3  # A
+# M. Ross, M. Flohr, and D. Ross, 
+# Crystalline Solution Seriesand Order-Disorderwithin the Natrolite Mineral Group
+# American Mineralogist 77, 685 (1992).
+a = 18.29  # A
+b = 18.64  # A
+c = 6.56   # A
 alpha = 90  # deg
 beta = 90  # deg
 gamma = 90  # deg
@@ -29,11 +31,19 @@ CloneWorkspace(InputWorkspace="ws_mantid", OutputWorkspace="ws_isaw")
 
 # ----------------------------------------------
 # calibrate the detector with SCDCalibratePanels 
-# without adjusting L1 and T0
 SCDCalibratePanels(
     PeakWorkspace='pws',
     DetCalFilename='corelli_natrolite_mantid.DetCal',
     ChangeL1=True, ChangeT0=True,
+    **lc_natrolite,
+    )
+    
+# --- check if L1 calibration is affected by the calibration
+# --- results of each panel
+SCDCalibratePanels(
+    PeakWorkspace='pws',
+    DetCalFilename='corelli_natrolite_mantid_nobanks.DetCal',
+    ChangeL1=True, ChangeT0=True, CalibrateBanks=False,
     **lc_natrolite,
     )
 
